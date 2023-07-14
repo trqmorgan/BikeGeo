@@ -18,3 +18,4 @@ def image_upload(request):
 
 def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
+
