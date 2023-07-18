@@ -1,0 +1,13 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'upload/style.css' %}">
+
+{% if latest_brand_list %}
+    <ul>
+    {% for brand in latest_brand_list %}
+    <li><a>{{ brand.brand_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No brands are available.</p>
+{% endif %}

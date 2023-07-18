@@ -21,8 +21,11 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("bike-geometry/", include("upload.urls")),
+    path("demo/", include("upload.urls")),
+    path("bike-geo/", include("bike_geometry.urls")),
+    path("__debug__/", include("debug_toolbar.urls"))
 ]
 
 if bool(settings.DEBUG):
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
