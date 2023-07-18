@@ -4,6 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
+from django.db.models import Q
 
 from .models import BikeBrand, BikeModel, BikeGeometry
 
@@ -21,3 +22,30 @@ class IndexView(generic.ListView):
         return BikeBrand.objects.filter(date_added__lte=timezone.now()).order_by("-date_added")[
             :5
         ]
+    
+
+# Define function to display all books
+def bike_list(request):
+    bike = BikeModel.objects.all()
+    return render(request, 'bike_geometry/model_list.html', {'bike': bike})
+
+
+def search(request):
+    results = []
+    if request.method == "GET":
+        query = request.GET.get('search')
+        print(query)
+
+        if query == '' or query is None:
+            query = 'None'
+
+        results = BikeModel.objects.filter(Q(model_name__icontains=query))
+
+    return render(request, 'bike_geometry/search.html', {'query': query, 'results': results})
+
+
+
+
+
+
+

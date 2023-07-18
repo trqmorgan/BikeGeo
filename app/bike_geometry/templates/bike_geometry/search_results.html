@@ -1,0 +1,20 @@
+{% if queryset %}
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in queryset %}
+                <tr>
+                    <td>{{ result.title }}</td>
+                    <td>{{ result.description }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No results found.</p>
+{% endif %}

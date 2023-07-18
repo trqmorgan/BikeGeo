@@ -38,7 +38,7 @@ docker-compose down -v
 
 #### build containers
 ```shell
-docker-compose up -d --build
+docker-compose up --build
 ```
 
 ## manage.py commands
