@@ -14,8 +14,9 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         """
-        Return the last five published bike brands (not including those set to be
-        published in the future).
+        Return the last five published bike brands
+        (not including those set to be published 
+        in the future).
         """
         return BikeBrand.objects.filter(date_added__lte=timezone.now()).order_by("-date_added")[
             :5
