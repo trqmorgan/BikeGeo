@@ -44,19 +44,25 @@ docker-compose up -d --build
 ## manage.py commands
 
 #### add a new app to project
+- run from same folder as manage.py (app)
 ```shell
-$ docker-compose exec web python manage.py startapp upload
+docker-compose exec web python manage.py startapp bike_geometry
+```
+
+-flush the database
+```
+docker-compose exec web python manage.py flush --no-input
 ```
 
 #### migrations
 - create migration script
 ```shell
-docker-compose exec web python manage.py makemigrations upload
+docker-compose exec web python manage.py makemigrations bike_geometry
 ```
 
 - view migration script - 0001 refers to script to view in ./upload/migrations
 ```shell
-docker-compose exec web python manage.py sqlmigrate upload 0001
+docker-compose exec web python manage.py sqlmigrate bike_geometry 0004
 ```
 
 - run migration script
