@@ -1,0 +1,48 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <title>{{book.book_name}}</title>
+</head>
+
+<body>
+  <div class="container">
+    <br /><br />
+    <h2 class="text-center"> {{bike.brand_name}} {{bike.model_name}}</h2>
+    <hr>
+    <p class="lead">Size: {{geo.model_size}} </p>
+    <p class="lead">Year: {{bike.model_year}} </p>    
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Reach</th>
+          <th>Head Angle</th>
+          <th>Stack</th>
+          <th>Head Angle</th>
+          <th>Seattube C-T</th>
+          <th>Other_Role</th>
+          <th>Other_Role_1</th>
+          <th>Other_Role_2</th>
+          <th>Other_Role_3</th>
+          <th>Other_Role_4</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ geo.reach_mm }}</td>
+          <td>{{ geo.stack_mm }}</td>
+          <td>{{ geo.head_angle_degrees }}</td>
+        </tr>
+      </tbody>
+    </table>
+      <form action="{% url 'bike_geometry:bike_list' %}" class="form-inline" method="get">
+        <button type="submit" class="btn btn-primary btn-lg mb-2">Back</button>
+      </form>
+
+    {% load django_tables2 %} 
+    {% render_table table %}
+  </div>
+</body>
+</html>

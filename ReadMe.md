@@ -76,9 +76,9 @@ docker-compose exec web python manage.py createsuperuser
 ```
 
 ## hosted on
-- http://localhost:8000/bike-geometry/admin/
-- http://localhost:8000/bike-geometry/
-- http://localhost:8000/bike-geometry/upload/  
+- http://localhost:8000/bike-geom/admin/
+- http://localhost:8000/bike-geo/
+- http://localhost:8000/bike-geom/upload/  
   
     
 # Production
@@ -128,8 +128,8 @@ docker-compose -f docker-compose.prod.yml exec web python manage.py createsuperu
 
 ## hosted on
 - http://localhost:1337/admin/
-- http://localhost:1337/bike-geometry/
-- http://localhost:1337/bike-geometry/upload/
+- http://localhost:1337/bike-geo/
+- http://localhost:1337/bike-geo/upload/
 
 
 

@@ -33,13 +33,13 @@ DEBUG = int(os.environ.get("DEBUG", default=0))
 # between each. E.g.: 'DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]'
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 
-
 # Application definition
 
 INSTALLED_APPS = [
     "upload.apps.UploadConfig",
     "bike_geometry.apps.BikeGeometryConfig",
     "debug_toolbar",
+    "django_tables2",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -118,8 +118,6 @@ if DEBUG:
     import socket  # only if you haven't already imported this
     hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
     INTERNAL_IPS = [ip[: ip.rfind(".")] + ".1" for ip in ips] + ["127.0.0.1", "10.0.2.2"]
-
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/

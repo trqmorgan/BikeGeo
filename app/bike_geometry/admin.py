@@ -5,7 +5,7 @@ from .models import BikeBrand, BikeModel, BikeGeometry
 
 class BikeModelInline(admin.TabularInline):
     model = BikeModel
-    extra = 3
+    extra = 1
 
 
 class BikeBrandAdmin(admin.ModelAdmin):
