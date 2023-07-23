@@ -1,0 +1,38 @@
+li a {
+    color: green;
+}
+
+body {
+    background: white url("images/background.png") no-repeat;
+    background-size: cover;
+    background-position: center 300px;
+}
+
+
+
+
+/* Styles for the banner */
+.banner {
+    background-color: rgba(34, 34, 34, 0.8);
+    color: #fff;
+    padding: 20px;
+    text-align: left;
+    margin-bottom: 20px;
+    font-family: 'Moon', sans-serif;
+}
+
+
+
+/* Styles for the title */
+.title {
+    font-size: 48px;
+    letter-spacing: 2px;
+    font-family: 'Moon', sans-serif;
+}
+
+/* Optional: Add some additional styles to make it look even cooler! */
+.banner {
+    /*background-image: url('path/to/your/background-image.jpg');*/
+    background-size: cover;
+    background-position: center;
+}

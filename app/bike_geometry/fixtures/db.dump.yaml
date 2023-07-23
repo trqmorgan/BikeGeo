@@ -1,0 +1,77 @@
+1
+- model: bike_geometry.bikebrand
+  pk: 1
+  fields:
+    brand_name: Specalized
+    date_added: 2023-07-23 08:19:00+00:00
+- model: bike_geometry.bikebrand
+  pk: 2
+  fields:
+    brand_name: Trek
+    date_added: 2023-07-23 08:19:00+00:00
+- model: bike_geometry.bikemodel
+  pk: 1
+  fields:
+    brand_name: 1
+    model_name: Demo
+    model_year: 2023
+- model: bike_geometry.bikemodel
+  pk: 2
+  fields:
+    brand_name: 2
+    model_name: Session
+    model_year: 2023
+- model: bike_geometry.bikegeometry
+  pk: 1
+  fields:
+    model_name: 1
+    model_size: S2
+    reach_mm: 427
+    stack_mm: 632
+    top_tube_effective_mm: null
+    seat_tube_center_top: 394
+    head_angle_degrees: 62.8
+    seat_tube_angle_degrees: 78.2
+    head_tube_length_mm: 105
+    chainstay_length_mm: 438
+    wheelbase_mm: 1249
+    front_center_mm: 801
+    standover_mm: null
+    bb_drop_mm: 25
+    bb_height_mm: 350
+    bb_standard: SRAM DUB, 83mm
+    fork_offset_mm: 56
+    trail_mm: 127
+    seatpost_diameter_mm: null
+    seat_clamp_size: null
+    wheel_size: '4'
+    front_travel_mm: 200
+    rear_travel_mm: 200
+    shock_size: 225x75
+- model: bike_geometry.bikegeometry
+  pk: 2
+  fields:
+    model_name: 2
+    model_size: R1
+    reach_mm: 447
+    stack_mm: 634
+    top_tube_effective_mm: null
+    seat_tube_center_top: 425
+    head_angle_degrees: 63.6
+    seat_tube_angle_degrees: 61.6
+    head_tube_length_mm: 117
+    chainstay_length_mm: 435
+    wheelbase_mm: 1243
+    front_center_mm: null
+    standover_mm: null
+    bb_drop_mm: 12
+    bb_height_mm: 359
+    bb_standard: null
+    fork_offset_mm: 46
+    trail_mm: 131
+    seatpost_diameter_mm: null
+    seat_clamp_size: null
+    wheel_size: null
+    front_travel_mm: 200
+    rear_travel_mm: 200
+    shock_size: null

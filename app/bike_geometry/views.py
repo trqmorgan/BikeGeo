@@ -6,13 +6,11 @@ from django.views import generic
 from django.utils import timezone
 from django.db.models import Q
 import django_tables2 as tables
+from django_pandas.io import read_frame
+import django_pandas as dpd
+import pandas as pd
 
 from .models import BikeBrand, BikeModel, BikeGeometry
-
-
-class SimpleTable(tables.Table):
-    class Meta:
-        model = BikeGeometry 
 
 
 def index(request):
@@ -21,14 +19,23 @@ def index(request):
 
 
 def bike_detail(request, id):
-  
     bike = get_object_or_404(BikeModel, id=id)
-    geo = get_object_or_404(BikeGeometry, model_name_id=id) 
+    geo = get_object_or_404(BikeGeometry, model_name_id=id)
     queryset = BikeGeometry.objects.all()
-    table = SimpleTable(queryset)
+
+    df = dpd.io.read_frame(queryset)
+    df.rename(columns=lambda x: x.replace("_", " "), inplace=True)
+    df = df.drop(columns=['id'])
+    df = df.set_index('model name').T.reset_index()
+    
+    table = df.style.set_table_attributes('class="table table-striped"').to_html(
+        index=True
+    )
 
     return render(
-        request, "bike_geometry/bike_detail.html", {"bike": bike, "geo": geo, "table": table}
+        request,
+        "bike_geometry/bike_detail.html",
+        {"bike": bike, "geo": geo, "table": table},
     )
 
 
@@ -44,5 +51,7 @@ def search(request):
         )
 
     return render(
-        request, "bike_geometry/search_results.html", {"query": query, "results": results}
+        request,
+        "bike_geometry/search_results.html",
+        {"query": query, "results": results},
     )
