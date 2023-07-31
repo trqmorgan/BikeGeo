@@ -21,17 +21,14 @@ def index(request):
 def bike_detail(request, id):
     bike = get_object_or_404(BikeModel, id=id)
     geo = get_object_or_404(BikeGeometry, model_name_id=id)
-    queryset = BikeGeometry.objects.all()
-
+    queryset = BikeGeometry.objects.filter(Q(model_name_id=id))
     df = dpd.io.read_frame(queryset)
     df.rename(columns=lambda x: x.replace("_", " "), inplace=True)
     df = df.drop(columns=['id'])
     df = df.set_index('model name').T.reset_index()
-    
     table = df.style.set_table_attributes('class="table table-striped"').to_html(
         index=True
     )
-
     return render(
         request,
         "bike_geometry/bike_detail.html",

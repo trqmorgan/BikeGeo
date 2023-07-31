@@ -17,11 +17,12 @@
 
 <body>
     <header class="banner">
+        <img class="logo-image" src="{% static 'bike_geometry/images/logo.jpeg' %}">
         <h1 class="title">BikeGeoDB</h1>
     </header>
 
 
-    <div class="container">
+    <div class = "search-container">
         <br />
         <form action="{% url 'bike_geometry:search' %}" class="form-inline" method="get">
             <div class="form-group mx-sm-3 mb-1">
