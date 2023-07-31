@@ -15,7 +15,8 @@
            {% endwith %}
            </h3>
    {% for c in results %}
-   <h4> <a href="{{c.id}}/">{{c.brand_name}} {{c.model_name}} ({{c.model_year}})</a>  <input type="submit" value="+" name="_make-unique"></h4>   
+   <h4> <a href="{{c.id}}/">{{c.brand_name}} {{c.model_name}} ({{c.model_year}})</a></h4>  
+    
    {% empty %}
    <h3>No results found.</h3>
    {% endfor %}

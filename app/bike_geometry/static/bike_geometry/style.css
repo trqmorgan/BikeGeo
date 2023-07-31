@@ -1,0 +1,50 @@
+body {
+    background: white url("images/mountains.jpeg") no-repeat;
+    background-size: cover;
+    background-position: center -0x;
+}
+
+
+.logo-image {
+    display: block;
+    max-width: 100px;
+    max-height: auto;
+
+}
+
+
+.title { 
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+
+/* Styles for the banner */
+.banner {
+    display: flex;
+    background-color: rgba(12, 7, 29, 1);
+    color:  rgba(173, 243, 245, 1);
+    padding: 15px;
+    text-align: left;   
+    font-family: 'Moon', sans-serif;
+}
+
+.search-container {
+    width: 100%;
+    margin-left: 5%;
+    margin-top: 1%;
+}
+
+/* Styles for the title */
+.title {
+    font-size: 48px;
+    letter-spacing: 2px;
+    font-family: 'Moon', sans-serif;
+}
+
+/* Optional: Add some additional styles to make it look even cooler! */
+.banner {
+    /*background-image: url('path/to/your/background-image.jpg');*/
+    background-size: cover;
+    background-position: center;
+}

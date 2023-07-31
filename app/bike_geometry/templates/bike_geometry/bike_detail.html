@@ -13,36 +13,14 @@
     <h2 class="text-center"> {{bike.brand_name}} {{bike.model_name}}</h2>
     <hr>
     <p class="lead">Size: {{geo.model_size}} </p>
-    <p class="lead">Year: {{bike.model_year}} </p>    
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Reach</th>
-          <th>Head Angle</th>
-          <th>Stack</th>
-          <th>Head Angle</th>
-          <th>Seattube C-T</th>
-          <th>Other_Role</th>
-          <th>Other_Role_1</th>
-          <th>Other_Role_2</th>
-          <th>Other_Role_3</th>
-          <th>Other_Role_4</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>{{ geo.reach_mm }}</td>
-          <td>{{ geo.stack_mm }}</td>
-          <td>{{ geo.head_angle_degrees }}</td>
-        </tr>
-      </tbody>
-    </table>
-      <form action="{% url 'bike_geometry:bike_list' %}" class="form-inline" method="get">
-        <button type="submit" class="btn btn-primary btn-lg mb-2">Back</button>
-      </form>
-
-    {% load django_tables2 %} 
-    {% render_table table %}
+    <p class="lead">Year: {{bike.model_year}} </p>
+  
+    {{ table|safe }}
+     <br /><br />
+    <form action="{% url 'bike_geometry:bike_list' %}" class="form-inline" method="get">
+      <button type="submit" class="btn btn-primary btn-lg mb-2">Back</button>
+    </form>
   </div>
 </body>
+
 </html>

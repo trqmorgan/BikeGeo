@@ -45,7 +45,7 @@ class BikeGeometry(models.Model):
     top_tube_effective_mm = models.IntegerField(default=None, blank=True, null=True)
     seat_tube_center_top = models.IntegerField(default=None, blank=True, null=True)
     head_angle_degrees = models.FloatField(default=None, blank=True, null=True)
-    seat_angle_degrees = models.FloatField(default=None, blank=True, null=True)
+    seat_tube_angle_degrees = models.FloatField(default=None, blank=True, null=True)
     head_tube_length_mm = models.IntegerField(default=None, blank=True, null=True)
     chainstay_length_mm = models.IntegerField(default=None, blank=True, null=True)
     wheelbase_mm = models.IntegerField(default=None, blank=True, null=True)
